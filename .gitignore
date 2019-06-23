@@ -13,12 +13,14 @@
 *.ilk
 *.lastbuildstate
 vc100.pdb
+vc120.pdb
 ipch
 *.sdf
 *.opensdf
 *.idb
 *.vcxproj
 *.sln
+.vs/
 
 # OSX/Linux build products
 *.mak
