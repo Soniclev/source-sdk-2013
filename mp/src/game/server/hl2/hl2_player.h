@@ -203,6 +203,7 @@ public:
 
 	void				CombineBallSocketed( CPropCombineBall *pCombineBall );
 
+	void Event_Dying(const CTakeDamageInfo& info);
 	virtual void		Event_KilledOther( CBaseEntity *pVictim, const CTakeDamageInfo &info );
 
 	virtual void		GetAutoaimVector( autoaim_params_t &params );

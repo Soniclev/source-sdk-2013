@@ -437,6 +437,25 @@ void CHL2_Player::Precache( void )
 	PrecacheScriptSound( "HL2Player.BurnPain" );
 }
 
+
+//-----------------------------------------------------------------------------
+// Purpose: Handle player death
+//-----------------------------------------------------------------------------
+void CHL2_Player::Event_Dying(const CTakeDamageInfo& info)
+{
+	LadderMove_t* move = GetLadderMove();
+	if (move != NULL)
+	{
+		CBaseEntity* spot = (CBaseEntity*)(move->m_hReservedSpot.Get());
+		if (spot)
+		{
+			UTIL_Remove(spot);
+			move->m_hReservedSpot = NULL;
+		}
+	}
+	BaseClass::Event_Dying(info);
+}
+
 //-----------------------------------------------------------------------------
 // Purpose: 
 //-----------------------------------------------------------------------------
