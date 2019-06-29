@@ -16,4 +16,4 @@ install:
 script: 
   - cd mp/src
   - ./createallprojects
-  - make -f everything.mak
+  - make server_hl2mp -f everything.mak
