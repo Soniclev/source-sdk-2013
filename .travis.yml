@@ -15,8 +15,5 @@ install:
 
 script: 
   - cd mp/src
-  - mkdir -p /valve/steam-runtime/bin/
-  - ln -s /usr/bin/ /valve/steam-runtime/bin
   - ./createallprojects
-  - /usr/bin/ar
   - make -f everything.mak
