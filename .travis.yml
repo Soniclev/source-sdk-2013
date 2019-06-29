@@ -11,11 +11,11 @@ before_install:
 install:
   # install g++ 4.8, if tests are run with g++
   - sudo apt-get install -qq g++-4.8 gcc-multilib gcc-4.8-multilib g++-4.8-multilib
-  # - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.8 50
+  - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.8 50
 
 script: 
   - cd mp/src
   - mkdir -p /valve/steam-runtime/bin/
-  - ln -s /usr/bin/g++-4.8 /valve/steam-runtime/bin/g++
+  - ln -s /usr/bin/ /valve/steam-runtime/bin
   - ./createallprojects
   - make -f everything.mak
