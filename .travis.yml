@@ -1,0 +1,22 @@
+language: cpp
+compiler:
+  - gcc
+
+# Setup repos etc before installation
+before_install:
+  - sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
+  - sudo apt-get update -qq
+
+# Install dependencies
+install:
+  # install g++ 4.8, if tests are run with g++
+  - sudo apt-get install -qq g++-4.8 gcc-multilib gcc-4.8-multilib g++-4.8-multilib
+  # - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.8 50
+
+# command to run tests
+script: 
+  - cd mp/src
+  - mkdir -p /valve/steam-runtime/bin/
+  - ln -s /usr/bin/g++-4.8 /valve/steam-runtime/bin/g++
+  - ./createallprojects
+  - make -f everything.mak
