@@ -11,8 +11,9 @@
 #pragma once
 #endif
 
-#define TICK_INTERVAL			(gpGlobals->interval_per_tick)
+//#define TICK_INTERVAL			(gpGlobals->interval_per_tick)
 
+#define TICK_INTERVAL			0.0078125
 
 #define TIME_TO_TICKS( dt )		( (int)( 0.5f + (float)(dt) / TICK_INTERVAL ) )
 #define TICKS_TO_TIME( t )		( TICK_INTERVAL *( t ) )

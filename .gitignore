@@ -20,6 +20,8 @@ ipch
 *.idb
 *.vcxproj
 *.sln
+*.lib
+*.pdb
 .vs/
 
 # OSX/Linux build products
